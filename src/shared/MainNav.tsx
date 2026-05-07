@@ -12,6 +12,12 @@ export default function MainNav() {
       >
         About
       </NavLink>
+      <NavLink
+        to="/login"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Login
+      </NavLink>
     </nav>
   );
 }
