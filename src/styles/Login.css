@@ -1,0 +1,70 @@
+/* Fondo general */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4f54d3, #6c63ff);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Caja del login */
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #4f54d3;
+}
+
+/* Botón principal */
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background: #4f54d3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #3b3fc0;
+}
+
+/* Texto registro */
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Botón tipo link */
+.link-btn {
+  background: none;
+  border: none;
+  color: #4f54d3;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
