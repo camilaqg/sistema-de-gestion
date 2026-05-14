@@ -1,7 +1,32 @@
-import React from 'react'
+import TaskForm from "../components/TaskForm";
+import type { TaskData } from "../components/TaskForm";
 
-export default function HomePage() {
+const HomePage = () => {
+
+  const handleAddTask = (
+    task: TaskData
+  ) => {
+
+    console.log(task);
+
+  };
+
   return (
-    <div>HomePage</div>
-  )
-}
+
+    <div className="
+      min-h-screen
+      flex
+      justify-center
+      items-center
+      bg-gray-100
+    ">
+
+      <TaskForm
+        onAddTask={handleAddTask}
+      />
+
+    </div>
+  );
+};
+
+export default HomePage;
