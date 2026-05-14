@@ -1,70 +1,181 @@
-/* Fondo general */
-.login-container {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONTENEDOR GENERAL */
+
+.login-container{
+  width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #4f54d3, #6c63ff);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Caja del login */
-.login-box {
+/* PANEL IZQUIERDO */
+
+.left-panel{
+  width: 40%;
+  background: #edf7f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TARJETA LOGO */
+
+.logo-card{
+  width: 260px;
+  height: 260px;
   background: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 300px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
 }
 
-/* Inputs */
-.input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  outline: none;
+/* IMAGEN */
+
+.logo-img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
-.input:focus {
-  border-color: #4f54d3;
+/* TITULO */
+
+.logo-card h2{
+  color: #2c9ca3;
+  margin-bottom: 10px;
+  font-size: 28px;
 }
 
-/* Botón principal */
-.btn {
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  background: #4f54d3;
+/* TEXTO */
+
+.logo-card p{
+  color: gray;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* PANEL DERECHO */
+
+.right-panel{
+  width: 60%;
+  background: linear-gradient(135deg,#4f54d3,#686df5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CAJA LOGIN */
+
+.login-box{
+  width: 400px;
+}
+
+/* TITULO LOGIN */
+
+.login-box h1{
   color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
+  font-size: 42px;
+  margin-bottom: 40px;
 }
 
-.btn:hover {
-  background: #3b3fc0;
+/* INPUTS */
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-/* Texto registro */
-.register-text {
-  margin-top: 15px;
+.input-group label{
+  color: white;
+  margin-bottom: 8px;
   font-size: 14px;
 }
 
-/* Botón tipo link */
-.link-btn {
-  background: none;
-  border: none;
-  color: #4f54d3;
-  cursor: pointer;
-  margin-left: 5px;
-  font-weight: bold;
+/* INPUT */
+
+.input-group input{
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  font-size: 14px;
 }
 
-.link-btn:hover {
+/* PLACEHOLDER */
+
+.input-group input::placeholder{
+  color: #d9d9d9;
+}
+
+/* INPUT FOCUS */
+
+.input-group input:focus{
+  border: 1px solid white;
+}
+
+/* BOTON LOGIN */
+
+.btn-login{
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #4f54d3;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+/* HOVER BOTON */
+
+.btn-login:hover{
+  transform: scale(1.03);
+}
+
+/* BOTON REGISTRO */
+
+.forgot-btn{
+  width: 100%;
+  margin-top: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
   text-decoration: underline;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+
+  .left-panel{
+    display: none;
+  }
+
+  .right-panel{
+    width: 100%;
+  }
+
+  .login-box{
+    width: 90%;
+  }
+
+  .login-box h1{
+    font-size: 30px;
+  }
 }

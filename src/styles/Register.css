@@ -1,0 +1,198 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONTENEDOR */
+
+.register-container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* PANEL IZQUIERDO */
+
+.left-panel{
+  width: 45%;
+  background: #edf6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TARJETA */
+
+.logo-card{
+  width: 300px;
+  height: 300px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGEN */
+
+.logo-img{
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* TITULO */
+
+.logo-card h2{
+  color: #2d9ba0;
+  margin-bottom: 12px;
+  font-size: 32px;
+}
+
+/* TEXTO */
+
+.logo-card p{
+  color: gray;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* PANEL DERECHO */
+
+.right-panel{
+  width: 55%;
+  background: linear-gradient(135deg,#5a61e6,#5157b8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORMULARIO */
+
+.register-box{
+  width: 420px;
+}
+
+/* TITULO */
+
+.register-box h1{
+  color: white;
+  font-size: 45px;
+  margin-bottom: 35px;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* LABEL */
+
+.input-group label{
+  color: white;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* INPUT */
+
+.input-group input{
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+/* PLACEHOLDER */
+
+.input-group input::placeholder{
+  color: #d7d7d7;
+}
+
+/* TEXTO PASSWORD */
+
+.password-text{
+  color: white;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* BOTON */
+
+.btn-register{
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #4f54d3;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+/* HOVER */
+
+.btn-register:hover{
+  transform: scale(1.03);
+}
+
+/* LOGIN BUTTON */
+
+.login-btn{
+  width: 100%;
+  margin-top: 18px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+
+  .left-panel{
+    display: none;
+  }
+
+  .right-panel{
+    width: 100%;
+  }
+
+  .register-box{
+    width: 90%;
+  }
+
+  .register-box h1{
+    font-size: 32px;
+  }
+
+  /* SCROLL SI EL CONTENIDO ES MUY GRANDE */
+
+body{
+  overflow-x: hidden;
+}
+
+/* CENTRAR MEJOR EL FORMULARIO */
+
+.right-panel{
+  padding: 40px 0;
+}
+
+}

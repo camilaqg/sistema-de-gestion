@@ -1,63 +1,138 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../styles/Login.css";
+import logo from "../assets/logo.png";
 
 function Login() {
-    const [user, setUser] = useState("");
-    const [password, setPassword] = useState("");
 
-    const navigate = useNavigate();
+  // STATES
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleLogin = () => {
+  const navigate = useNavigate();
 
-        // validacion de los campos
-        if (user === "" || password === "") {
-            alert("Por favor, complete todos los campos");
-            return;
-        }
+  // FUNCION LOGIN
+  const handleLogin = () => {
 
-        //validacion de credenciales
-        if (user === "admin" && password === "admin") {
-            alert("ingreso exitoso");
-            navigate("/dashboard");
-        } else {
-            alert("usuario o contraseña incorrectos");
-        }
-    };
+    // VALIDAR CAMPOS VACIOS
+    if (user === "" || password === "") {
 
-    return (
-  <div className="login-container">
-    <div className="login-box">
-      <h2>Inicio de sesión</h2>
+      alert("Por favor complete todos los campos");
 
-      <input
-        className="input"
-        placeholder="usuario"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
-      />
+      return;
+    }
 
-      <input
-        className="input"
-        type="password"
-        placeholder="contraseña"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+    // OBTENER USUARIO GUARDADO
+    const usuarioGuardado = JSON.parse(
+      localStorage.getItem("usuario") || "{}"
+    );
+    // VALIDAR SI EXISTE USUARIO
+    if (!usuarioGuardado) {
 
-      <button className="btn" onClick={handleLogin}>
-        Ingresar
-      </button>
+      alert("No hay usuarios registrados");
 
-      <p className="register-text">
-        ¿No tienes cuenta?
-        <button className="link-btn" onClick={() => navigate("/registro")}>
-          Regístrate
-        </button>
-      </p>
+      return;
+    }
+
+    // VALIDAR CREDENCIALES
+    if (
+      user === usuarioGuardado.usuario &&
+      password === usuarioGuardado.password
+    ) {
+
+      alert("Ingreso exitoso");
+
+      navigate("/dashboard");
+
+    } else {
+
+      alert("Usuario o contraseña incorrectos");
+
+    }
+
+  };
+
+  return (
+
+    <div className="login-container">
+
+      {/* PANEL IZQUIERDO */}
+      <div className="left-panel">
+
+        <div className="logo-card">
+
+          <img
+            src={logo}
+            alt="Logo Sistema"
+            className="logo-img"
+          />
+
+          <h2>Sistema Académico</h2>
+
+          <p>GESTIÓN ESTUDIANTIL</p>
+
+        </div>
+
+      </div>
+
+      {/* PANEL DERECHO */}
+      <div className="right-panel">
+
+        <div className="login-box">
+
+          <h1>Ingresar al sistema</h1>
+
+          {/* USUARIO */}
+          <div className="input-group">
+
+            <label>Usuario</label>
+
+            <input
+              type="text"
+              placeholder="Escriba su usuario"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+            />
+
+          </div>
+
+          {/* CONTRASEÑA */}
+          <div className="input-group">
+
+            <label>Contraseña</label>
+
+            <input
+              type="password"
+              placeholder="Escriba su contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+          </div>
+
+          {/* BOTON LOGIN */}
+          <button
+            className="btn-login"
+            onClick={handleLogin}
+          >
+            Ingresar
+          </button>
+
+          {/* REGISTRO */}
+          <button
+            className="forgot-btn"
+            onClick={() => navigate("/registro")}
+          >
+            Registrarse
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
-);
 
+  );
 }
-export default Login;   
+
+export default Login;
